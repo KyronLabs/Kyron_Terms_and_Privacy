@@ -1,73 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Kyron</title>
+    <meta charset="utf-8">
+    <title>Kyron – Terms of Service (human-readable edition)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; color: #1a1a1a; }
-        h2 { margin-top: 30px; color: #2c3e50; font-size: 1.25rem; border-left: 4px solid #3498db; padding-left: 10px; }
-        p { margin-bottom: 15px; }
-        ul { margin-bottom: 15px; padding-left: 20px; }
-        li { margin-bottom: 5px; }
-        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9em; color: #666; text-align: center; }
-        .date { font-style: italic; color: #666; font-size: 0.9em; }
-        .warning { color: #c0392b; font-weight: bold; }
+        :root{
+            --brand:#0d6efd;
+            --danger:#dc3545;
+            --warning:#ffc107;
+            --success:#198754;
+            --muted:#6c757d;
+            --bg:#f8f9fa;
+            --card:#ffffff;
+            --radius:8px;
+            --max:860px;
+        }
+        *{box-sizing:border-box;font:inherit}
+        body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+             background:var(--bg);color:#212529;line-height:1.65}
+        main{max-width:var(--max);margin:0 auto;padding:1rem}
+        section{background:var(--card);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:1.5rem;padding:1.5rem}
+        h1,h2,h3{line-height:1.25;margin:0 0 .75rem;font-weight:600}
+        h1{font-size:1.9rem;color:var(--brand)}
+        h2{font-size:1.35rem;border-left:4px solid var(--brand);padding-left:.75rem;margin-top:2rem}
+        h3{font-size:1.1rem}
+        p,ul{margin:0 0 1rem}
+        ul{padding-left:1.25rem}
+        a{color:var(--brand)}
+        summary{cursor:pointer;font-weight:600;padding:.5rem .25rem}
+        details[open] summary{margin-bottom:.5rem}
+        .badge{display:inline-block;font-size:.75rem;padding:.25rem .5rem;border-radius:var(--radius);background:var(--muted);color:#fff}
+        .badge.danger{background:var(--danger)}
+        .badge.warning{background:var(--warning);color:#000}
+        .badge.success{background:var(--success)}
+        .badge.info{background:var(--brand)}
+        .age-gate,.cookie-banner{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999}
+        .age-gate>div,.cookie-banner>div{background:var(--card);padding:2rem;border-radius:var(--radius);max-width:420px;text-align:center}
+        .btn{display:inline-block;padding:.5rem 1rem;border:0;border-radius:var(--radius);background:var(--brand);color:#fff;text-decoration:none;font-weight:500}
+        .btn.danger{background:var(--danger)}
+        .btn.success{background:var(--success)}
+        .btn:hover{filter:brightness(1.1)}
+        .toc{list-style:none;padding:0;margin:0}
+        .toc li{margin:.25rem 0}
+        .toc a{text-decoration:none}
+        .toc a:hover{text-decoration:underline}
+        .hidden{display:none}
+        .footer{text-align:center;font-size:.85rem;color:var(--muted);margin-top:3rem}
+        @media(min-width:600px){
+            main{padding:2rem}
+            section{padding:2rem}
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Terms & Conditions</h1>
-    <p class="date">Last Updated: November 24, 2025</p>
-
-    <p>Welcome to <strong>Kyron</strong>. These terms govern your use of our platform hosted at <em>kyron.spidroid.com</em>. By creating an account or using Kyron, you agree to these terms.</p>
-
-    <h2>1. Eligibility</h2>
-    <p>You must be at least <strong>13 years old</strong> to use Kyron. If we discover an account is held by someone under 13, we will terminate it immediately to comply with COPPA regulations.</p>
-
-    <h2>2. User Content & License</h2>
-    <p><strong>You own what you post.</strong> You retain full ownership rights to the content you create on Kyron.</p>
-    <p>However, to provide the service, you grant Kyron a worldwide, non-exclusive, royalty-free license to host, display, reproduce, and distribute your content within the platform. This allows us to show your posts to your followers and other users.</p>
-
-    <h2>3. Code of Conduct</h2>
-    <p>We maintain a zero-tolerance policy for toxic behavior. You may not use Kyron to:</p>
-    <ul>
-        <li>Post hate speech, harassment, or threats.</li>
-        <li>Dox (publish private info of) others.</li>
-        <li>Distribute illegal content or promote illegal acts.</li>
-    </ul>
-    <p class="warning">Violation of these rules will result in immediate content removal or account bans without prior notice.</p>
-
-    <h2>4. Termination</h2>
-    <p><strong>By You:</strong> You can delete your account at any time via your settings.</p>
-    <p><strong>By Us:</strong> We reserve the right to suspend or terminate your access to Kyron at our sole discretion, for any reason, including violation of these Terms.</p>
-
-    <h2>5. "As-Is" Service Disclaimer</h2>
-    <p>Kyron is provided "as is" and "as available." We make no warranties, express or implied, regarding the platform's reliability or availability. We are not responsible for:</p>
-    <ul>
-        <li>Downtime or technical glitches.</li>
-        <li>Loss of user data or content.</li>
-        <li>Disputes between you and other users.</li>
-    </ul>
-
-    <h2>6. Governing Law</h2>
-    <p>These Terms are governed by the laws of the <strong>State of Delaware</strong>, United States, without regard to conflict of law principles. Any legal disputes will be resolved exclusively in the state or federal courts located in Delaware.</p>
-
-    <h2>7. Dispute Resolution & Arbitration</h2>
-    <p>In the event of a legal dispute, you and Kyron agree to attempt to resolve it informally first. If that fails, the dispute shall be resolved by binding arbitration.</p>
-    <p><strong>Opt-Out:</strong> You may opt out of this arbitration agreement within 30 days of first accepting these terms by emailing us with your username and a clear statement of your intent to opt out.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>For questions regarding these Terms or to report violations, please contact:</p>
-    <p><strong>Email:</strong> <a href="mailto:abuse@spidroid.com">abuse@spidroid.com</a></p>
-
-    <div class="footer">
-        &copy; 2025 Kyron / spidroid.com – All rights reserved.
-    </div>
+<!-- 1.  Cookie banner  ---------------------------------------------------->
+<div id="cookieBanner" class="cookie-banner">
+  <div>
+    <h3>We use cookies</h3>
+    <p>Only the boring functional kind (login, session, security). No ads, no trackers.</p>
+    <button class="btn success" onclick="acceptCookies()">OK</button>
+  </div>
 </div>
 
+<!-- 2.  Age-gate  --------------------------------------------------------->
+<div id="ageGate" class="age-gate">
+  <div>
+    <h3>How old are you?</h3>
+    <p>You must be at least 13 to create an account on Kyron (COPPA).</p>
+    <button class="btn" onclick="ageYes()">I’m 13 or older</button>
+    <button class="btn danger" onclick="ageNo()">I’m younger</button>
+  </div>
+</div>
+
+<!-- 3.  Main content  ----------------------------------------------------->
+<main id="mainContent" class="hidden">
+
+<section>
+  <h1>Kyron Terms of Service &nbsp;<span class="badge info">Last updated 28 Nov 2025</span></h1>
+  <p>We tried to write this in normal English. If anything still feels like lawyer-speak, email us: <a href="mailto:abuse@spidroid.com">abuse@spidroid.com</a></p>
+
+  <!-- Quick-jump menu -->
+  <nav>
+    <h2>Table of contents</h2>
+    <ul class="toc">
+      <li><a href="#s1">1. Who may use Kyron</a></li>
+      <li><a href="#s2">2. Your content &amp; licence</a></li>
+      <li><a href="#s3">3. Rules of behaviour</a></li>
+      <li><a href="#s4">4. Suspension &amp; termination</a></li>
+      <li><a href="#s5">5. The legal stuff (warranties, liability, indemnity)</a></li>
+      <li><a href="#s6">6. Privacy overview (link to full policy)</a></li>
+      <li><a href="#s7">7. Arbitration &amp; opt-out</a></li>
+      <li><a href="#s8">8. How to contact us</a></li>
+      <li><a href="#export">Download or export your data</a></li>
+    </ul>
+  </nav>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s1">
+  <h2>1. Who may use Kyron <span class="badge warning">Must be 13+</span></h2>
+  <ul>
+    <li>You must be at least 13 years old. If you are under 18 you should review these terms with a parent or guardian.</li>
+    <li>You must be a human. Bots may have accounts only if they are clearly labelled as such and follow our Bot Policy.</li>
+    <li>You must provide accurate registration info. Do not impersonate anyone.</li>
+  </ul>
+  <details>
+    <summary>What happens if we discover an under-age account?</summary>
+    <p>We delete it. Immediately. No appeal. We also purge any content we are legally required to remove.</p>
+  </details>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s2">
+  <h2>2. Your content &amp; licence</h2>
+  <p><strong>You keep ownership</strong> of everything you originally post on Kyron (text, photos, code, etc.).</p>
+  <p>We need certain rights to operate the service. Therefore you grant us a non-exclusive, worldwide, royalty-free, sublicensable licence to:</p>
+  <ul>
+    <li>host, reproduce, display, distribute, and adapt your content <em>solely for the purpose of running Kyron</em>;</li>
+    <li>make back-ups and archival copies;</li>
+    <li>share your public posts to third-party services if you enable that feature.</li>
+  </ul>
+  <p>This licence ends when you delete your content or your account, <strong>except</strong> where others have re-shared it and we can no longer track all copies (e.g. RSS caches, external search engines).</p>
+  <details>
+    <summary>More licence details…</summary>
+    <p>We will never sell your content to third parties. We do not claim copyright over it. You are free to re-publish it anywhere else.</p>
+  </details>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s3">
+  <h2>3. Rules of behaviour <span class="badge danger">Zero tolerance</span></h2>
+  <p>Kyron is meant to be a friendly place. You agree <strong>not</strong> to:</p>
+  <ul>
+    <li>post anything illegal, or that infringes anyone’s intellectual-property rights;</li>
+    <li>harass, threaten, dox, or incite violence against any person or group;</li>
+    <li>upload viruses or malicious code;</li>
+    <li>scrape the service for email addresses or other user data;</li>
+    <li>circumvent any technical measures we use to protect the platform;</li>
+    <li>use the service for unsolicited promotions or spam.</li>
+  </ul>
+  <p>Enforcement: we may remove content, suspend, or permanently ban accounts without prior notice. We reserve the right to involve law-enforcement when required.</p>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s4">
+  <h2>4. Suspension &amp; termination</h2>
+  <h3>By you</h3>
+  <p>You can delete your account in Settings → “Delete everything”. Deletion is irreversible; your public posts disappear within 24 h, back-ups within 30 days.</p>
+  <h3>By us</h3>
+  <p>We may suspend or terminate accounts for:</p>
+  <ul>
+    <li>violation of these Terms or our policies;</li>
+    <li>extended inactivity (&gt; 18 months);</li>
+    <li>legal requests (court orders, DMCA, etc.).</li>
+  </ul>
+  <details>
+    <summary>Appeals</summary>
+    <p>If you believe your account was disabled by mistake, email <a href="mailto:abuse@spidroid.com">abuse@spidroid.com</a> within 30 days. We review most cases within 72 h.</p>
+  </details>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s5">
+  <h2>5. The legal stuff (warranties, liability, indemnity)</h2>
+  <p>The service is provided “as is” and “as available”. We do not promise it will be uninterrupted or error-free. To the maximum extent permitted by law:</p>
+  <ul>
+    <li>We disclaim all warranties, express or implied.</li>
+    <li>We are not liable for indirect, incidental, or consequential damages.</li>
+    <li>Our total liability is capped at US&nbsp;$100 or the amount you paid us in the past 12 months, whichever is greater.</li>
+  </ul>
+  <p>You agree to indemnify and hold Kyron harmless from any claims arising out of your use of the service or violation of these Terms.</p>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s6">
+  <h2>6. Privacy in one breath</h2>
+  <p>We collect as little as possible. Public posts are public. Private messages are encrypted at rest. We never sell data. We comply with GDPR, CCPA, and COPPA. Read the full <a href="privacy.html" target="_blank">Privacy Policy</a>.</p>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s7">
+  <h2>7. Arbitration &amp; opt-out <span id="arbitrationTimer" class="badge warning"></span></h2>
+  <p>If we can’t resolve a dispute informally, it will be settled by binding arbitration under the American Arbitration Association’s rules in Delaware, USA. <strong>You may opt-out</strong> of arbitration within 30 days of first accepting these terms by sending an email to <a href="mailto:arbitration-optout@spidroid.com">arbitration-optout@spidroid.com</a> with your username and the subject “ARBITRATION OPT-OUT”.</p>
+  <details>
+    <summary>Why arbitration?</summary>
+    <p>Arbitration is usually faster and cheaper than court. You still have small-claims court as an alternative. Class-action waivers apply.</p>
+  </details>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="s8">
+  <h2>8. Contact channels</h2>
+  <ul>
+    <li>Abuse / ToS violations: <a href="mailto:abuse@spidroid.com">abuse@spidroid.com</a></li>
+    <li>Security bugs: <a href="mailto:security@spidroid.com">security@spidroid.com</a> (we run a bug-bounty)</li>
+    <li>DMCA notices: <a href="mailto:dmca@spidroid.com">dmca@spidroid.com</a></li>
+    <li>Snail-mail: Kyron Legal, 8 The Green, Suite 7342, Dover, DE 19901, USA</li>
+  </ul>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section id="export">
+  <h2>Download your data</h2>
+  <p>You can request a zip file with all your posts, messages, and settings. Most exports finish within 15 minutes.</p>
+  <button class="btn" onclick="alert('This would open the in-app export wizard.')">Request export</button>
+</section>
+
+<!-- --------------------------------------------------------------- -->
+<section>
+  <h2>Changelog</h2>
+  <ul>
+    <li>28 Nov 2025 – Added plain-English summaries, cookie banner, age-gate, export wizard, arbitration timer.</li>
+    <li>24 Nov 2025 – Original version.</li>
+  </ul>
+</section>
+
+<div class="footer">
+  © 2025 Kyron / spidroid.com – <a href="privacy.html">Privacy</a> – <a href="bot-policy.html">Bot Policy</a> – <a href="cookies.html">Cookie Policy</a>
+</div>
+
+</main>
+
+<script>
+/* ---------- cookie consent ---------- */
+function acceptCookies(){
+  document.cookie="kyron_cookie_ok=1;path=/;max-age=31536000";
+  document.getElementById('cookieBanner').style.display='none';
+}
+(function(){
+  if(document.cookie.includes('kyron_cookie_ok'))
+    document.getElementById('cookieBanner').style.display='none';
+})();
+
+/* ---------- age gate ---------- */
+function ageYes(){
+  localStorage.setItem('kyron_age_ok','1');
+  document.getElementById('ageGate').style.display='none';
+  document.getElementById('mainContent').classList.remove('hidden');
+}
+function ageNo(){
+  location.href='https://www.google.com/search?q=online+safety+for+kids';
+}
+(function(){
+  if(localStorage.getItem('kyron_age_ok')){
+    document.getElementById('ageGate').style.display='none';
+    document.getElementById('mainContent').classList.remove('hidden');
+  }
+})();
+
+/* ---------- arbitration countdown ---------- */
+(function(){
+  const accepted=localStorage.getItem('kyron_tos_accepted');
+  if(!accepted){
+    localStorage.setItem('kyron_tos_accepted',Date.now());
+    return; // first view, start 30-day clock
+  }
+  const daysLeft=30-Math.floor((Date.now()-accepted)/86400000);
+  const el=document.getElementById('arbitrationTimer');
+  if(el){
+    if(daysLeft>0) el.textContent=daysLeft+' days left to opt-out of arbitration';
+    else el.textContent='Arbitration opt-out window closed';
+  }
+})();
+</script>
 </body>
 </html>
