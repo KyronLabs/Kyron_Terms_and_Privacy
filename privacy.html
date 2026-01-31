@@ -4,247 +4,743 @@
     <meta charset="utf-8">
     <title>Kyron Privacy Policy – full, plain-English edition</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root{
-            --brand:#0d6efd;
-            --danger:#dc3545;
-            --warning:#ffc107;
-            --success:#198754;
-            --muted:#6c757d;
-            --bg:#f8f9fa;
-            --card:#ffffff;
-            --radius:8px;
-            --max:860px;
+        /* SF Pro system font stack */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        *{box-sizing:border-box;font:inherit}
-        body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-             background:var(--bg);color:#212529;line-height:1.65}
-        main{max-width:var(--max);margin:0 auto;padding:1rem}
-        section{background:var(--card);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:1.5rem;padding:1.5rem}
-        h1,h2,h3{line-height:1.25;margin:0 0 .75rem;font-weight:600}
-        h1{font-size:1.9rem;color:var(--success)}
-        h2{font-size:1.35rem;border-left:4px solid var(--success);padding-left:.75rem;margin-top:2rem}
-        h3{font-size:1.1rem}
-        p,ul{margin:0 0 1rem}
-        ul{padding-left:1.25rem}
-        a{color:var(--brand)}
-        summary{cursor:pointer;font-weight:600;padding:.5rem .25rem}
-        details[open] summary{margin-bottom:.5rem}
-        .badge{display:inline-block;font-size:.75rem;padding:.25rem .5rem;border-radius:var(--radius);background:var(--muted);color:#fff}
-        .badge.danger{background:var(--danger)}
-        .badge.warning{background:var(--warning);color:#000}
-        .badge.success{background:var(--success)}
-        .badge.info{background:var(--brand)}
-        .toc{list-style:none;padding:0;margin:0}
-        .toc li{margin:.25rem 0}
-        .toc a{text-decoration:none}
-        .toc a:hover{text-decoration:underline}
-        .hidden{display:none}
-        .footer{text-align:center;font-size:.85rem;color:var(--muted);margin-top:3rem}
-        /* cookie banner reuse */
-        .cookie-banner{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999}
-        .cookie-banner>div{background:var(--card);padding:2rem;border-radius:var(--radius);max-width:420px;text-align:center}
-        .btn{display:inline-block;padding:.5rem 1rem;border:0;border-radius:var(--radius);background:var(--brand);color:#fff;text-decoration:none;font-weight:500}
-        .btn.success{background:var(--success)}
-        .btn:hover{filter:brightness(1.1)}
-        @media(min-width:600px){
-            main{padding:2rem}
-            section{padding:2rem}
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Accent colors */
+        .accent-red {
+            color: #ff3b30;
+        }
+        .accent-blue {
+            color: #007aff;
+        }
+        .bg-accent-blue {
+            background-color: #007aff;
+        }
+        .bg-accent-red {
+            background-color: #ff3b30;
+        }
+        .bg-accent-green {
+            background-color: #34c759;
+        }
+        
+        /* Subtle hover lift */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+
+        /* Table styling */
+        .data-table {
+            width: 100%;
+            font-size: 0.9rem;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #6b7280;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .data-table tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* Details/summary styling */
+        details {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        details[open] {
+            background-color: #fafafa;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: "+";
+            font-size: 1.25rem;
+            color: #9ca3af;
+        }
+        details[open] summary::after {
+            content: "−";
+        }
+
+        /* Social icon hover effect */
+        .social-icon {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .cookie-banner.active {
+            opacity: 1;
+            pointer-events: all;
         }
     </style>
 </head>
-<body>
+<body class="bg-white text-black antialiased">
 
-<!-- 1.  Cookie banner (re-usable) -->
+<!-- Cookie Banner -->
 <div id="cookieBanner" class="cookie-banner">
-  <div>
-    <h3>We use cookies</h3>
-    <p>Only the boring functional kind (login, session, security). No ads, no trackers.</p>
-    <button class="btn success" onclick="acceptCookies()">OK</button>
-  </div>
+    <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl transform scale-95 transition-transform duration-200" id="cookieContent">
+        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">We use cookies</h3>
+        <p class="text-gray-500 mb-6 leading-relaxed">Only the boring functional kind (login, session, security). No ads, no trackers.</p>
+        <button onclick="acceptCookies()" class="w-full inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full text-base font-medium hover:bg-gray-900 transition-colors hover-lift">
+            OK
+        </button>
+    </div>
 </div>
 
-<main>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-gray-100 z-50">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 text-xl font-semibold tracking-tight group">
+            <!-- Kyron Logo Mark -->
+            <div class="w-8 h-8 rounded-lg bg-black flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <span>Kyron</span>
+        </a>
+        <div class="flex items-center gap-6">
+            <a href="index.html#features" class="text-sm text-gray-500 hover:text-black transition-colors">Features</a>
+            <a href="index.html#about" class="text-sm text-gray-500 hover:text-black transition-colors">About</a>
+            <a href="/login" class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">Log In</a>
+        </div>
+    </div>
+</nav>
 
-<section>
-  <h1>Kyron Privacy Policy <span class="badge success">Updated 28 Nov 2025</span></h1>
-  <p>We wrote this for humans. If anything is unclear, email <a href="mailto:privacy@spidroid.com">privacy@spidroid.com</a> and we’ll clarify within 72 h.</p>
+<!-- Main Content -->
+<main class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        
+        <!-- Header Section -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                    Updated 28 Nov 2025
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+                Privacy Policy
+            </h1>
+            <p class="text-lg text-gray-500 leading-relaxed">
+                We wrote this for humans. If anything is unclear, email <a href="mailto:privacy@spidroid.com" class="text-blue-600 hover:text-blue-700 transition-colors">privacy@spidroid.com</a> and we'll clarify within 72h.
+            </p>
+        </div>
 
-  <!-- Quick-jump menu -->
-  <nav>
-    <h2>Table of contents</h2>
-    <ul class="toc">
-      <li><a href="#p1">1. What we collect &amp; why</a></li>
-      <li><a href="#p2">2. Cookies &amp; local storage</a></li>
-      <li><a href="#p3">3. How we share (spoiler: we rarely do)</a></li>
-      <li><a href="#p4">4. Your choices &amp; rights (GDPR, CCPA, etc.)</a></li>
-      <li><a href="#p5">5. Data retention &amp; deletion</a></li>
-      <li><a href="#p6">6. Security measures</a></li>
-      <li><a href="#p7">7. Children &amp; COPPA</a></li>
-      <li><a href="#p8">8. International transfers</a></li>
-      <li><a href="#p9">9. Changes to this policy</a></li>
-      <li><a href="#p10">10. Contact the privacy team</a></li>
-    </ul>
-  </nav>
-</section>
+        <!-- Table of Contents -->
+        <div class="bg-gray-50 rounded-2xl p-8 mb-12">
+            <h2 class="text-lg font-semibold mb-4">Table of contents</h2>
+            <nav class="grid sm:grid-cols-2 gap-2">
+                <a href="#p1" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">1</span>
+                    What we collect & why
+                </a>
+                <a href="#p2" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">2</span>
+                    Cookies & local storage
+                </a>
+                <a href="#p3" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">3</span>
+                    How we share
+                </a>
+                <a href="#p4" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">4</span>
+                    Your rights
+                </a>
+                <a href="#p5" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">5</span>
+                    Data retention
+                </a>
+                <a href="#p6" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">6</span>
+                    Security
+                </a>
+                <a href="#p7" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">7</span>
+                    Children & COPPA
+                </a>
+                <a href="#p8" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">8</span>
+                    International transfers
+                </a>
+                <a href="#p9" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">9</span>
+                    Changes to policy
+                </a>
+                <a href="#p10" class="flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors py-1">
+                    <span class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-medium border border-gray-200">10</span>
+                    Contact
+                </a>
+            </nav>
+        </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p1">
-  <h2>1. What we collect &amp; why <span class="badge info">Transparency first</span></h2>
+        <!-- Section 1 -->
+        <section id="p1" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <h2 class="text-2xl font-semibold tracking-tight">What we collect & why</h2>
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-50 text-blue-600">Transparency first</span>
+            </div>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-900">Account data (you give us)</h3>
+                    <ul class="space-y-2 text-gray-600 leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Username</strong> – public identifier.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Email</strong> – used only for login, password resets, and important service notices. Never published.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Password</strong> – stored salted & hashed with bcrypt 12 rounds. We don't know it.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Optional profile fields:</strong> display name, bio, avatar, website, pronouns. All optional, all editable, all deletable.</span>
+                        </li>
+                    </ul>
+                </div>
 
-  <h3>A. Account data (you give us)</h3>
-  <ul>
-    <li>Username – public identifier.</li>
-    <li>Email – used only for login, password resets, and important service notices. Never published.</li>
-    <li>Password – stored salted &amp; hashed with bcrypt 12 rounds. We don’t know it.</li>
-    <li>Optional profile fields: display name, bio, avatar, website, pronouns. All optional, all editable, all deletable.</li>
-  </ul>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-900">Content data (you create)</h3>
+                    <ul class="space-y-2 text-gray-600 leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span>Public posts, comments, likes, re-shares.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span>Uploads (images, videos, audio). We strip hidden EXIF/GPS data on upload.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span>Direct messages – encrypted at rest (AES-256) and in transit (TLS 1.3). We cannot read them.</span>
+                        </li>
+                    </ul>
+                </div>
 
-  <h3>B. Content data (you create)</h3>
-  <ul>
-    <li>Public posts, comments, likes, re-shares.</li>
-    <li>Uploads (images, videos, audio). We strip hidden EXIF/GPS data on upload.</li>
-    <li>Direct messages – encrypted at rest (AES-256) and in transit (TLS 1.3). We cannot read them.</li>
-  </ul>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-900">Technical data (automatic)</h3>
+                    <ul class="space-y-2 text-gray-600 leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>IP address</strong> – kept 90 days for rate-limiting & abuse detection, then anonymised.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Device type, OS, browser</strong> – short-term server logs to debug crashes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+                            <span><strong>Referrer</strong> – temporary analytics to see where traffic comes from (no Google Analytics, we use Plausible, no cookies).</span>
+                        </li>
+                    </ul>
+                </div>
 
-  <h3>C. Technical data (automatic)</h3>
-  <ul>
-    <li>IP address – kept 90 days for rate-limiting &amp; abuse detection, then anonymised.</li>
-    <li>Device type, OS, browser – short-term server logs to debug crashes.</li>
-    <li>Referrer – temporary analytics to see where traffic comes from (no Google Analytics, we use Plausible, no cookies).</li>
-  </ul>
+                <div class="bg-red-50 rounded-2xl p-6 border border-red-100">
+                    <h3 class="text-lg font-semibold mb-3 accent-red">No-no list (what we never collect)</h3>
+                    <ul class="space-y-2 text-gray-700 leading-relaxed">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 accent-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            No real-name requirement.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 accent-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            No phone number.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 accent-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            No payment info (we don't charge yet).
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 accent-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            No location tracking.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 accent-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            No third-party advertising cookies.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <h3>D. No-no list (what we <strong>never</strong> collect)</h3>
-  <ul>
-    <li>No real-name requirement.</li>
-    <li>No phone number.</li>
-    <li>No payment info (we don’t charge yet).</li>
-    <li>No location tracking.</li>
-    <li>No third-party advertising cookies.</li>
-  </ul>
-</section>
+        <!-- Section 2 -->
+        <section id="p2" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">Cookies & local storage</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">We use two types:</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Strictly necessary</h3>
+                    <p class="text-sm text-gray-600">Session cookie <code class="bg-white px-1.5 py-0.5 rounded text-xs border">kyron_sid</code> – keeps you logged in. HttpOnly, Secure, SameSite=Lax.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Preference</h3>
+                    <p class="text-sm text-gray-600"><code class="bg-white px-1.5 py-0.5 rounded text-xs border">theme=dark</code> – remembers your colour choice, stored in localStorage.</p>
+                </div>
+            </div>
+            <p class="text-gray-600 leading-relaxed">Third-party? Zero. No Facebook pixels, no Google AdSense, no "like" buttons.</p>
+            
+            <details>
+                <summary>How to revoke</summary>
+                <p class="text-gray-600 mt-2">Delete cookies in browser settings or click the "Log out everywhere" button in Settings → Security.</p>
+            </details>
+        </section>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p2">
-  <h2>2. Cookies &amp; local storage</h2>
-  <p>We use two types:</p>
-  <ul>
-    <li><strong>Strictly necessary:</strong> session cookie <code>kyron_sid</code> – keeps you logged in. HttpOnly, Secure, SameSite=Lax.</li>
-    <li><strong>Preference:</strong> <code>theme=dark</code> – remembers your colour choice, stored in localStorage.</li>
-  </ul>
-  <p>Third-party? Zero. No Facebook pixels, no Google AdSense, no “like” buttons.</p>
-  <details>
-    <summary>How to revoke</summary>
-    <p>Delete cookies in browser settings or click the “Log out everywhere” button in Settings → Security.</p>
-  </details>
-</section>
+        <!-- Section 3 -->
+        <section id="p3" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">How we share (spoiler: we rarely do)</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">We are not a data broker. We share only:</p>
+            
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Public content</h3>
+                        <p class="text-sm text-gray-600">Anyone can see your public posts via the web, RSS, or API (rate-limited).</p>
+                    </div>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p3">
-  <h2>3. How we share (spoiler: we rarely do)</h2>
-  <p>We are not a data broker. We share only:</p>
-  <ul>
-    <li><strong>Public content:</strong> anyone can see your public posts via the web, RSS, or API (rate-limited).</li>
-    <li><strong>Service providers:</strong> our hosting provider (Hetzner) and e-mail relay (Mailgun) – both GDPR-compliant, bound by DPAs.</li>
-    <li><strong>Legal requests:</strong> we scrutinise every subpoena or court order. Where allowed, we notify you so you can object.</li>
-    <li><strong>Merger/acquisition:</strong> if Kyron is sold, you get 30-days notice and can delete your data before transfer.</li>
-  </ul>
-  <p>We never sell, rent, or trade personal data.</p>
-</section>
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Service providers</h3>
+                        <p class="text-sm text-gray-600">Our hosting provider (Hetzner) and e-mail relay (Mailgun) – both GDPR-compliant, bound by DPAs.</p>
+                    </div>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p4">
-  <h2>4. Your choices &amp; rights <span class="badge success">GDPR, CCPA, LGPD</span></h2>
-  <ul>
-    <li><strong>Access:</strong> download everything we have about you in Settings → “Export data”.</li>
-    <li><strong>Correction:</strong> edit profile any time.</li>
-    <li><strong>Deletion:</strong> delete account – irreversible, completed within 30 days.</li>
-    <li><strong>Portability:</strong> export gives you JSON/CSV you can take elsewhere.</li>
-    <li><strong>Restrict processing:</strong> contact us and we’ll pause certain uses (except storage).</li>
-    <li><strong>Object:</strong> you may object to any processing based on legitimate interest; we’ll stop unless we have compelling grounds.</li>
-    <li><strong>No discrimination:</strong> exercising your rights won’t change your service.</li>
-  </ul>
-  <p>Submit requests via <a href="mailto:privacy@spidroid.com">privacy@spidroid.com</a>. We respond within 30 days.</p>
-</section>
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Legal requests</h3>
+                        <p class="text-sm text-gray-600">We scrutinise every subpoena or court order. Where allowed, we notify you so you can object.</p>
+                    </div>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p5">
-  <h2>5. Data retention &amp; deletion schedule</h2>
-  <table style="width:100%;font-size:.9rem">
-    <thead><tr><th>Category</th><th>Retention</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>Account profile</td><td>Until deletion</td><td>You control it.</td></tr>
-      <tr><td>Public posts</td><td>Until deletion</td><td>Removed from feeds instantly, CDN cache 24 h.</td></tr>
-      <tr><td>Direct messages</td><td>Until both sides delete</td><td>Encrypted, can’t be read by us.</td></tr>
-      <tr><td>IP logs</td><td>90 days</td><td>Then anonymised.</td></tr>
-      <tr><td>Back-ups</td><td>30 days</td><td>Rolling snapshots for disaster recovery.</td></tr>
-    </tbody>
-  </table>
-  <details>
-    <summary>What if I’m suspended, not deleted?</summary>
-    <p>Data stays frozen during suspension so we can investigate. If you are re-instated, nothing is lost. If banned, data is wiped within 30 days unless we must keep it for legal evidence.</p>
-  </details>
-</section>
+                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Merger/acquisition</h3>
+                        <p class="text-sm text-gray-600">If Kyron is sold, you get 30-days notice and can delete your data before transfer.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                <p class="text-sm text-gray-600 font-medium">We never sell, rent, or trade personal data.</p>
+            </div>
+        </section>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p6">
-  <h2>6. Security measures</h2>
-  <ul>
-    <li>TLS 1.3 everywhere (A+ on SSL Labs).</li>
-    <li>Passwords: bcrypt 12 + per-user salt.</li>
-    <li>2-factor auth (TOTP) available.</li>
-    <li>Database encrypted at rest (AES-256).</li>
-    <li>Annual penetration tests + responsible-disclosure programme (<a href="mailto:security@spidroid.com">security@spidroid.com</a>).</li>
-    <li>SOC-2 Type II compliant data-centre (Hetzner).</li>
-  </ul>
-  <p>We notify you within 72 h if a breach affects your personal data.</p>
-</section>
+        <!-- Section 4 -->
+        <section id="p4" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <h2 class="text-2xl font-semibold tracking-tight">Your choices & rights</h2>
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-700">GDPR, CCPA, LGPD</span>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Access</h3>
+                    <p class="text-sm text-gray-600">Download everything we have about you in Settings → "Export data".</p>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p7">
-  <h2>7. Children &amp; COPPA <span class="badge warning">13+ only</span></h2>
-  <p>Kyron is not directed to children under 13. We do not knowingly collect data from them. If we learn we have, we delete the account and all data within 24 h. Parents may contact us to request deletion.</p>
-</section>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Correction</h3>
+                    <p class="text-sm text-gray-600">Edit profile any time.</p>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p8">
-  <h2>8. International transfers</h2>
-  <p>Servers are in the EU (Germany). If you access from outside the EU your data is processed there under GDPR adequacy decisions. We never ship data to third countries without Standard Contractual Clauses or your explicit consent.</p>
-</section>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Deletion</h3>
+                    <p class="text-sm text-gray-600">Delete account – irreversible, completed within 30 days.</p>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p9">
-  <h2>9. Changes to this policy</h2>
-  <p>We’ll email you for material changes and post a summary on the home feed. Changes take effect 30 days after posting. Archived copies are available on GitHub.</p>
-</section>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Portability</h3>
+                    <p class="text-sm text-gray-600">Export gives you JSON/CSV you can take elsewhere.</p>
+                </div>
 
-<!-- --------------------------------------------------------------- -->
-<section id="p10">
-  <h2>10. Contact the privacy team</h2>
-  <ul>
-    <li>Email (fastest): <a href="mailto:privacy@spidroid.com">privacy@spidroid.com</a></li>
-    <li>Encrypted: PGP key on <a href="https://keyserver.ubuntu.com/pks/lookup?op=get&search=privacy@spidroid.com" target="_blank">Ubuntu keyserver</a></li>
-    <li>Postal: Kyron Privacy, 8 The Green, Suite 7342, Dover, DE 19901, USA</li>
-  </ul>
-  <p>You may also designate an authorised agent to exercise rights on your behalf (written proof required).</p>
-</section>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Restrict processing</h3>
+                    <p class="text-sm text-gray-600">Contact us and we'll pause certain uses (except storage).</p>
+                </div>
 
-<div class="footer">
-  © 2025 Kyron / spidroid.com – <a href="terms.html">Terms</a> – <a href="cookies.html">Cookie Policy</a> – <a href="privacy.html">Privacy</a>
-</div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 hover-lift">
+                    <div class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Object</h3>
+                    <p class="text-sm text-gray-600">You may object to any processing based on legitimate interest.</p>
+                </div>
+            </div>
+            
+            <p class="mt-6 text-gray-600">Submit requests via <a href="mailto:privacy@spidroid.com" class="text-blue-600 hover:text-blue-700 transition-colors">privacy@spidroid.com</a>. We respond within 30 days. No discrimination: exercising your rights won't change your service.</p>
+        </section>
 
+        <!-- Section 5 -->
+        <section id="p5" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">Data retention & deletion</h2>
+            
+            <div class="overflow-hidden rounded-2xl border border-gray-200">
+                <table class="data-table">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th>Category</th>
+                            <th>Retention</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-medium">Account profile</td>
+                            <td>Until deletion</td>
+                            <td class="text-gray-500">You control it.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Public posts</td>
+                            <td>Until deletion</td>
+                            <td class="text-gray-500">Removed from feeds instantly, CDN cache 24h.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Direct messages</td>
+                            <td>Until both sides delete</td>
+                            <td class="text-gray-500">Encrypted, can't be read by us.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">IP logs</td>
+                            <td>90 days</td>
+                            <td class="text-gray-500">Then anonymised.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium">Back-ups</td>
+                            <td>30 days</td>
+                            <td class="text-gray-500">Rolling snapshots for disaster recovery.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <details>
+                <summary>What if I'm suspended, not deleted?</summary>
+                <p class="text-gray-600 mt-2">Data stays frozen during suspension so we can investigate. If you are re-instated, nothing is lost. If banned, data is wiped within 30 days unless we must keep it for legal evidence.</p>
+            </details>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="p6" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">Security measures</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm">TLS 1.3 everywhere (A+ on SSL Labs)</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    <span class="text-sm">Passwords: bcrypt 12 + per-user salt</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    <span class="text-sm">2-factor auth (TOTP) available</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm">Database encrypted at rest (AES-256)</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm">Annual penetration tests</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                    <svg class="w-5 h-5 accent-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm">SOC-2 Type II compliant data-centre</span>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-600">We notify you within 72h if a breach affects your personal data.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="p7" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <h2 class="text-2xl font-semibold tracking-tight">Children & COPPA</h2>
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-yellow-100 text-yellow-700">13+ only</span>
+            </div>
+            <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
+                <p class="text-gray-700 leading-relaxed">Kyron is not directed to children under 13. We do not knowingly collect data from them. If we learn we have, we delete the account and all data within 24h. Parents may contact us to request deletion.</p>
+            </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="p8" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">International transfers</h2>
+            <p class="text-gray-600 leading-relaxed">Servers are in the EU (Germany). If you access from outside the EU your data is processed there under GDPR adequacy decisions. We never ship data to third countries without Standard Contractual Clauses or your explicit consent.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="p9" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">Changes to this policy</h2>
+            <p class="text-gray-600 leading-relaxed">We'll email you for material changes and post a summary on the home feed. Changes take effect 30 days after posting. Archived copies are available on GitHub.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="p10" class="mb-16 scroll-mt-24">
+            <h2 class="text-2xl font-semibold tracking-tight mb-6">Contact the privacy team</h2>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <a href="mailto:privacy@spidroid.com" class="group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm group-hover:shadow transition-shadow">
+                        <svg class="w-5 h-5 accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Email (fastest)</h3>
+                    <p class="text-sm text-blue-600">privacy@spidroid.com</p>
+                </a>
+
+                <a href="https://keyserver.ubuntu.com/pks/lookup?op=get&search=privacy@spidroid.com" target="_blank" class="group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm group-hover:shadow transition-shadow">
+                        <svg class="w-5 h-5 accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Encrypted</h3>
+                    <p class="text-sm text-gray-600">PGP key on Ubuntu keyserver →</p>
+                </a>
+
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                        <svg class="w-5 h-5 accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-1">Postal</h3>
+                    <p class="text-sm text-gray-600">Kyron Privacy, 8 The Green, Suite 7342, Dover, DE 19901, USA</p>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-600">You may also designate an authorised agent to exercise rights on your behalf (written proof required).</p>
+        </section>
+
+    </div>
 </main>
 
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2 text-sm text-gray-400">
+            <div class="w-5 h-5 rounded bg-black flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                </svg>
+            </div>
+            <span>© 2025 Kyron. All rights reserved.</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4">
+                <a href="#" class="social-icon text-gray-400" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-400" aria-label="Twitter">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-400" aria-label="Bluesky">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 2.08 0 3.238c0 .378.384 3.138.64 4.531.788 4.224 2.627 5.656 5.184 5.656 1.113 0 2.258-.326 3.138-.869 1.304-.832 2.567-2.521 2.567-2.521s1.262 1.689 2.567 2.521c.88.543 2.025.869 3.138.869 2.557 0 4.396-1.432 5.184-5.656.256-1.393.64-4.153.64-4.531 0-1.158-.139-1.33-.902-1.673-.659-.299-1.664-.621-4.3.24-2.752 1.942-5.711 5.881-6.798 7.995z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-400" aria-label="Discord">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="h-4 w-px bg-gray-200"></div>
+            
+            <div class="flex gap-6 text-sm text-gray-500">
+                <a href="privacy.html" class="hover:text-black transition-colors font-medium text-black">Privacy</a>
+                <a href="terms.html" class="hover:text-black transition-colors">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script>
-/* ---------- cookie banner (same as ToS page) ---------- */
+/* Cookie banner logic */
 function acceptCookies(){
-  document.cookie="kyron_cookie_ok=1;path=/;max-age=31536000";
-  document.getElementById('cookieBanner').style.display='none';
+    document.cookie = "kyron_cookie_ok=1;path=/;max-age=31536000";
+    document.getElementById('cookieBanner').classList.remove('active');
 }
+
 (function(){
-  if(document.cookie.includes('kyron_cookie_ok'))
-    document.getElementById('cookieBanner').style.display='none';
+    const banner = document.getElementById('cookieBanner');
+    const content = document.getElementById('cookieContent');
+    
+    if(!document.cookie.includes('kyron_cookie_ok')){
+        setTimeout(() => {
+            banner.classList.add('active');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }, 500);
+    }
 })();
 </script>
+
 </body>
 </html>
