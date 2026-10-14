@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete your Kyron account</title>
+  <meta name="description" content="How to delete your Kyron account and everything in it, in the app or by email.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <!-- Plain CSS rather than the Tailwind play CDN the other two pages use:
+       somebody arriving here may be leaving, and the page should be readable
+       the moment it loads. -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --panel: #f9fafb;
+      --link: #007aff;
+      --danger: #ff3b30;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0b0c;
+        --text: #f3f4f6;
+        --muted: #a1a1aa;
+        --line: #27272a;
+        --panel: #161618;
+        --link: #4ea1ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 680px; margin: 0 auto; padding: 40px 16px 64px; }
+    header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    header img { width: 36px; height: 36px; }
+    header span { font-weight: 600; font-size: 1.1rem; }
+    h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 12px; letter-spacing: -0.01em; }
+    h2 { font-size: 1.2rem; margin: 40px 0 12px; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { color: var(--text); font-size: 1.05rem; }
+    ol, ul { margin: 0 0 12px; padding-left: 1.4rem; color: var(--muted); }
+    li { margin-bottom: 6px; }
+    strong { color: var(--text); }
+    a { color: var(--link); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .panel p:last-child, .panel ul:last-child { margin-bottom: 0; }
+    .warning { border-color: color-mix(in srgb, var(--danger) 40%, var(--line)); }
+    .mail {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--link);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9rem; }
+    footer p { margin: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="logo.svg" alt="">
+      <span>Kyron</span>
+    </header>
+
+    <h1>Delete your Kyron account</h1>
+    <p class="lead">
+      You can delete your account at any time, from the app or by email.
+      Deleting it is permanent: none of it can be recovered afterwards.
+    </p>
+
+    <h2>In the app</h2>
+    <ol>
+      <li>Open Kyron and go to <strong>Settings</strong>.</li>
+      <li>At the bottom, under Log out, tap <strong>Delete account</strong>.</li>
+      <li>Read what will be deleted, tap <strong>Delete account</strong>, then <strong>Delete</strong> to confirm.</li>
+    </ol>
+    <p>Your account is deleted straight away and you are signed out.</p>
+
+    <h2>Without the app</h2>
+    <p>
+      If you no longer have the app, email us from the address you signed up
+      with, and say that you want your account deleted. Include your username
+      if you have one. We check the request came from the account's own email
+      address, delete the account, and reply to confirm, within 30 days.
+    </p>
+    <a class="mail" href="mailto:privacy@spidroid.com?subject=Delete%20my%20Kyron%20account">Email privacy@spidroid.com</a>
+
+    <h2>What is deleted</h2>
+    <div class="panel warning">
+      <ul>
+        <li>Your sign-in, so your email and Google account can no longer reach it</li>
+        <li>Your profile, posts, replies, likes and reposts</li>
+        <li>Your messages, including the ones you sent to other people, and the photos and voice notes in them</li>
+        <li>Your followers, the people you follow, your blocks and mutes, and your settings</li>
+        <li>The photos, videos and voice recordings you uploaded</li>
+      </ul>
+    </div>
+
+    <h2>What happens to what you shared</h2>
+    <ul>
+      <li>
+        <strong>Communities you started</strong> are handed to their
+        longest-serving moderator or member, so the people in them keep them.
+        A community with nobody else in it is closed.
+      </li>
+      <li>
+        <strong>Messages other people sent you</strong> stay with them; your
+        side of those conversations is removed.
+      </li>
+      <li>
+        <strong>Posts that quoted yours</strong> stay up, without the quote.
+      </li>
+      <li>
+        <strong>A picture or banner you set for a community</strong> stays
+        with the community.
+      </li>
+    </ul>
+
+    <h2>What we keep</h2>
+    <p>
+      Nothing that identifies you. We keep an empty record under your old
+      account number, with no email, name or content, so that a phone still
+      signed in to the account cannot bring it back. Copies in our database
+      backups are removed as those backups are replaced.
+    </p>
+
+    <footer>
+      <p>
+        Read the <a href="privacy.html">Privacy Policy</a> and the
+        <a href="terms.html">Terms of Service</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
