@@ -7,6 +7,7 @@ The two legal pages the app links out to, served as static HTML from
 |:--|:--|
 | `terms.html` | Terms of Service, plain-English edition |
 | `privacy.html` | Privacy Policy, full edition |
+| `delete-account.html` | How to delete an account, in the app or by email. The URL Google Play's Data safety form asks for, so it is not age-gated: somebody leaving, or a parent, has to be able to read it |
 | `logo.svg` | Kyron's mark — the same file the app draws, copied from `app/lib/assets/logo.svg` in [KyronLabs/kyron](https://github.com/KyronLabs/kyron) |
 
 The app's links to these live in
