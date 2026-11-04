@@ -68,6 +68,10 @@
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      /* The address is long: on a narrow phone it wraps inside the button
+         rather than running off the side of the screen. */
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
     footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9rem; }
     footer p { margin: 0; }
@@ -101,7 +105,7 @@
       if you have one. We check the request came from the account's own email
       address, delete the account, and reply to confirm, within 30 days.
     </p>
-    <a class="mail" href="mailto:privacy@spidroid.com?subject=Delete%20my%20Kyron%20account">Email privacy@spidroid.com</a>
+    <a class="mail" href="mailto:spidroidtechnologiesinc@gmail.com?subject=Delete%20my%20Kyron%20account">Email spidroidtechnologiesinc@gmail.com</a>
 
     <h2>What is deleted</h2>
     <div class="panel warning">
